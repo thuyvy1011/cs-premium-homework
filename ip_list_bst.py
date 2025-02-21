@@ -69,8 +69,8 @@ class BinaryTree:
         return result
         
     def _inorder(self, node, min_price, max_price, result):
-        if not node:
-            return
+        if node is None:
+            return None
         if node.price > min_price:
             self._inorder(node.left, min_price, max_price, result)
         if min_price <= node.price <= max_price:
